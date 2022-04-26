@@ -1,0 +1,38 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+        <img src="images/4wins.png" alt="4 wins brand name" width="54" height="48" class="mr-1">
+        4Wins
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+        aria-expanded="false" aria-label="Toggle navigation" @onclick="Toggle">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="@cssClass navbar-collapse" id="navbarSupportedContent" @onclick="Toggle">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <NavLink class="nav-link" href="buy" Match="NavLinkMatch.All">
+                    <span class="oi oi-cart" aria-hidden="true"></span> Buy
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="sell">
+                    <span class="oi oi-dollar" aria-hidden="true"></span> Sell
+                </NavLink>
+            </li>
+       
+        </ul>
+    </div>
+</nav>
+
+@code {
+    private bool toggleCollapse = true;
+
+    private string cssClass => toggleCollapse ? "collapse" : null;
+
+    private void Toggle()
+    {
+        toggleCollapse = !toggleCollapse;
+    }
+}
