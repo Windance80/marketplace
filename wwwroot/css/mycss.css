@@ -8,6 +8,10 @@ html, body {
     background-color: rgb(2, 25, 66);   
 }
 
+.right-menu {
+    color: white;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
